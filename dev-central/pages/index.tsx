@@ -1,12 +1,21 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import { ColorSchemeProvider, ColorScheme, Paper } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
+import { useHotkeys, useLocalStorage } from '@mantine/hooks';
+import AppShellCustom from "../components/AppShellCustom"
+import ThemeWrapper from '../components/ThemeWrapper';
+import TableExample from '../components/TableExample';
 
 const Home: NextPage = () => {
-  return <div>
-    hello world
-  </div>
+  return (
+    <ThemeWrapper>
+    <Paper>
+    <AppShellCustom>
+      <TableExample />
+    </AppShellCustom>
+    </Paper>
+    </ThemeWrapper>
+  )
 }
 
 export default Home
