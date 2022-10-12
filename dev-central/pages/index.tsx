@@ -5,14 +5,22 @@ import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 import AppShellCustom from "../components/AppShellCustom"
 import ThemeWrapper from '../components/ThemeWrapper';
 import TableExample from '../components/TableExample';
-
+import Infocard from '../components/Infocard';
 const Home: NextPage = () => {
   return (
     <ThemeWrapper>
     <Paper>
-    <AppShellCustom>
-      <TableExample />
-    </AppShellCustom>
+      <AppShellCustom>
+        <Infocard id="tanish arora" posttype="dev story">
+          Hello world this is tanish arora
+        </Infocard>
+        <Infocard id="tanish arora" posttype="dev story">
+          Hello world this is tanish arora
+        </Infocard>
+        <Infocard id="tanish arora" posttype="dev story">
+          Hello world this is tanish arora
+        </Infocard>
+      </AppShellCustom>
     </Paper>
     </ThemeWrapper>
   )

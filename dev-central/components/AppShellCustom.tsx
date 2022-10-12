@@ -9,19 +9,23 @@ import {
   MediaQuery,
   Burger,
   useMantineTheme,
+  Group,
+  Button,
+  Container,
+  MantineProvider
 } from '@mantine/core';
 import LightDarkButton from './LightDarkButton';
 import styled from '@emotion/styled';
+import Title from './Title';
+import SearchBox from './SearchBox';
+import NewLightDark from "./NewLightDark"
+import CustomButton from './CustomButton';
+import Navbar1 from "./Navbar1"
+import { width } from '@mui/system';
 
-const Logo = styled.h1`
-  margin-left: 10px;
-  font-weight: bold;
-  margin-top: 30px;
 
 
-`
-
-export default function AppShellDemo({children}) {
+export default function AppShellDemo({children}: any) {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   return (
@@ -33,39 +37,47 @@ export default function AppShellDemo({children}) {
       }}
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
-      navbar={
-        <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
-          <Text>Application navbar</Text>
-        </Navbar>
-      }
       aside={
         <MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
           <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-            <Text>Application sidebar</Text>
+
           </Aside>
         </MediaQuery>
       }
-      footer={
-        <Footer height={60} p="md">
-          Application footer
-        </Footer>
+      navbar={
+        <Navbar1 />
       }
       header={
-        <Header height={80} p="md">
-          <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+        <Header height={70} p="md" style={{backgroundColor: "#4051b5", display: "flex", justifyContent: 'space-between', alignItems: "center"}}>
+          <div style={{ display: 'flex', alignItems: "center"}}>
             <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
               <Burger
                 opened={opened}
                 onClick={() => setOpened((o) => !o)}
-                size="sm"
+                size="lg"
                 color={theme.colors.gray[6]}
-                mr="xl"
+                mr="sm"
               />
             </MediaQuery>
-
-            <Logo>DevCentral</Logo>
-            <LightDarkButton />
+            {/* <div style={{marginTop: "10px"}}>
+          <Title name="DevCentral"></Title>
+          </div> */}
+          
+          
           </div>
+          <div>
+          <SearchBox />
+          </div>
+         
+          
+          
+            <div style={{display: "flex", alignItems: "center", justifyContent: "flex-end"}}>
+              
+              {/* this section will have the notifications icons */}
+              
+            <NewLightDark />
+            </div>
+            
           
         </Header>
       }
