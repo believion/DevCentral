@@ -4,7 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
 
 
-const ThemeWrapper = ({children}) => {
+const ThemeWrapper = ({children}: any) => {
     const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
         key: 'mantine-color-scheme',
         defaultValue: 'light',

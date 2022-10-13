@@ -9,16 +9,19 @@ import {
     Container,
     Group,
     Button,
+    Footer,
   } from '@mantine/core';
+  import LightDarkButton from '../components/LightDarkButton';
   
   export default function login() {
     return (
-      <Container size={420} my={40}>
+      <>
+      <Container size={700} my={40} mt="150px">
         <Title
           align="center"
-          sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}
+          sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900, fontSize: 50 })}
         >
-          Welcome To DevCentral
+          Welcome To DevCentral 👋
         </Title>
         <Text color="dimmed" size="sm" align="center" mt={5}>
           Do not have an account yet?{' '}
@@ -39,7 +42,11 @@ import {
           <Button variant="gradient" gradient={{ from: 'violet', to: 'indigo' }} fullWidth mt="xl">
             Login
           </Button>
+          <LightDarkButton />
         </Paper>
+        
       </Container>
+      
+      </>
     );
   }

@@ -22,6 +22,7 @@ import NewLightDark from "./NewLightDark"
 import CustomButton from './CustomButton';
 import Navbar1 from "./Navbar1"
 import { width } from '@mui/system';
+import Navbar3 from "./Navbar3";
 
 
 
@@ -45,7 +46,7 @@ export default function AppShellDemo({children}: any) {
         </MediaQuery>
       }
       navbar={
-        <Navbar1 />
+        <Navbar3 opened={opened}/>
       }
       header={
         <Header height={70} p="md" style={{backgroundColor: "#4051b5", display: "flex", justifyContent: 'space-between', alignItems: "center"}}>

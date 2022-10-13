@@ -6,7 +6,7 @@ const SearchBox = () => {
     return <TextInput 
     placeholder="Search" 
     size='lg'
-    radius="md"
+    radius="xl"
     variant='filled'
     icon={<IconSearch size={20} 
     />} />;
