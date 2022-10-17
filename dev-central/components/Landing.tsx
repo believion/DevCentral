@@ -11,6 +11,7 @@ import {
 } from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
 import image from "./image.svg";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -82,9 +83,12 @@ export default function Landing() {
             </Text>
 
             <Group mt={30}>
+              <Link href="/login">
               <Button radius="xl" size="md" className={classes.control}>
                 Login
               </Button>
+              </Link>
+              <Link href="/register">
               <Button
                 variant="default"
                 radius="xl"
@@ -93,6 +97,7 @@ export default function Landing() {
               >
                 Register
               </Button>
+              </Link>
             </Group>
           </div>
           <Image
